@@ -1,0 +1,65 @@
+/*Definindo a altura e largura da imagem do logo*/
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+/*Definindo a margem à direita para os itens do cabeçalho*/
+.nav-link {
+    margin-right: 95px; /*Configuração que arruma todos os itens do cabeçalho*/
+}
+
+/*Definindo o sublinhado para o link em que a pessoa está*/
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+}
+
+/*Define a sombra do header*/
+nav {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+/* Definindo a posição do elemento */
+  .nav-item {
+    position: relative; 
+  }
+  
+  /*Definindo propriedades da search box*/
+  .inline-search-component {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    width: 0; 
+    background-color: #ffffff; 
+    overflow: hidden; 
+    transition: width 0.3s;
+  }
+
+  /*Largura do campo de pesquisa*/
+  .inline-search-component.active {
+    width: 250px;
+  }
+  
+  /*Propriedades dentro do campo de pesquisa*/
+  .search-container {
+    display: flex;
+    align-items: center; 
+    padding: 10px; 
+  }
+  
+  /*Estilização da search box*/
+  .inline-search-input {
+    flex-grow: 1; 
+    padding: 8px; 
+    font-size: 14px; 
+    border-radius: 20px; 
+    border: 2px solid #000000 !important; 
+    background-color: #ffffff; 
+    color: #000000; 
+    box-shadow: none !important;
+  }
+  
+  /*Animação de movimento dos elementos no header*/
+  .navbar-nav {
+    transition: margin-right 0.3s;
+  }

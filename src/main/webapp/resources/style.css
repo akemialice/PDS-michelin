@@ -1,0 +1,460 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  padding: 0 35px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper{
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+
+.wrapper i:last-child{
+  right: -22px;
+}
+
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img{
+  pointer-events: none;
+}
+
+.carousel img{
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 5); /*Aumenta o tamanho do carrossel*/
+}
+
+.carousel img:first-child{
+  margin-left: 0px;
+}
+
+.carousel img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+}
+
+.wrapper .carousel2 {
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+/*Configuração Janela pop-up*/
+
+
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup-content {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2,
+.popup-content p {
+  margin: 0;
+  text-align: left;
+}
+
+
+
+#close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-content p {
+  margin: 10px 0;
+}
+
+.favoritar {
+  font-size: 30px;
+}
+
+/*Configuração Footer*/
+
+#myFooter {
+  position: relative;
+  
+  margin-top: 100px; /*Caso o footer esteja cobrindo o contéudo, aumente isso*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff;
+  padding: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+section.container {
+  min-height: calc(100vh - 170px); /* Adjust the value (170px) based on your footer height and padding */
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.links a {
+  margin-right: 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.links a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000000;
+}
+
+/*Configuração da página de contato*/
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family:'Sarala', sans-serif;
+}
+
+  textarea, button {
+  display: block;
+  width: 50%;
+}
+
+
+
+ textarea {
+  background-color: #ffff;
+  font: inherit;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid  #000000;
+  border-radius: 4px;
+}
+
+textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+ textarea:hover,  textarea:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+ textarea:valid {
+  border-color: rgb(8, 102, 8);
+  box-shadow: 0 0 0 1px #26a100;
+}
+
+button {
+  : root {
+    --cor-primaria-success: rgb(75, 200, 138);
+    --cor-hover-success: rgb(116, 158, 137);
+    --cor-secundaria-success: rgb(27, 66, 50);
+    
+    --cor-primaria-info: rgb(61, 157, 246);
+    --cor-hover-info: rgb(116, 134, 158);
+    --cor-secundaria-info: rgb(31, 62, 88);
+
+    --cor-primaria-danger: rgb(200, 75, 75);
+    --cor-hover-danger: rgb(158, 116, 116);
+    --cor-secundaria-danger: rgb(58, 22, 22);
+}
+ }
+
+.btn {
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .3s;
+    border-radius: 5px;
+}
+
+/*SUCCESS*/
+.btn-success {
+    background-color: var(--cor-primaria-success);
+    outline: none;
+    color: var(--cor-secundaria-success)
+}
+
+.btn-success:hover {
+    background-color: var(--cor-hover-success);
+}
+
+.btn-success:active {
+    color:var(--cor-primaria-success);
+    background-color: var(--cor-secundaria-success);
+}
+
+/*Configuração Pg Sobre*/
+
+.div-config {
+  display: flex;
+  justify-content: center;
+  margin-bottom:20px;
+  margin-top: 50px;
+  margin-right: 25px;
+  background-color: white;
+  width:100vw;
+  height: 100px;
+}
+
+.ul-config {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.li-textos {
+  width: 700px;
+  padding: 5px;
+  height: 450px;
+  margin-top: 20px;
+  line-height: 30px;
+  text-align: justify;
+  color: black;
+  font-size: 22px;
+}
+
+.text-lateral {
+  width:100px;
+  height:40px;
+  margin-top: 20px;
+  text-align: center; 
+  margin-left: 100px;  
+  margin-right: 50px;    
+  list-style-type: none;
+}
+
+/* pagina Para Você */
+
+/* pergunta 1*/
+
+.opcoes-valor {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.imagem-container {
+  opacity: 0.60;
+}
+
+.opcoes-valor button {
+  position: relative;
+}
+
+.opcoes-valor .legenda {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 5px 10px;
+  font-size: 40px;
+  text-align: center;
+}
+
+/* pergunta 2*/
+
+.opcoes-1 .legenda {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 5px 10px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.opcoes1-2 .legenda {
+  position: absolute;
+  bottom: 10px;
+  left: 100%;
+  top: 35%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 5px 10px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.opcoes-1 button{
+  position: relative;
+} 
+
+.opcoes-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* pergunta 3*/
+
+.categoria .legenda {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 5px 10px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.categoria-1 .legenda {
+  position: absolute;
+  bottom: 10px;
+  left: 100%;
+  top: 35%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 5px 10px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.categoria button{
+  position: relative;
+}
+
+.categoria {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-wrapper {
+   display: flex;
+   justify-content: start;
+ }
+ .card img {
+   max-width: 100%;
+   max-height: 100%;
+ }
+
+ .card {
+   margin: 0 0.5em;
+   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+   border: none;
+   border-radius: 0;
+ }
+ .carousel-inner {
+   padding: 1em;
+ }
+
+ .container {
+    margin-top: 200px;
+ }
+
+ .title {
+ margin: 50px 0 50px 0;
+ }
+
+/* pergunta 4*/
