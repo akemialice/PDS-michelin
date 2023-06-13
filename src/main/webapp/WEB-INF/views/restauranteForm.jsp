@@ -5,7 +5,7 @@
 <header>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+<link href="resources/form.css" rel="stylesheet"/>
     <title>Restaurante</title>
 </header>
 <body>
@@ -13,7 +13,7 @@
     <form method="post" action="/cadastraRestaurante">
     <div class="form-group">
         <label>Nome</label>
-        <input name="nome" value="${nome}" class="form-control"></input>
+        <input name="nome" value="${nome}" class="form-control" required="required"></input>
     </div>
     <div class="form-group">
          <label>Endereço</label>
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group">
           <label>Foto</label>
-          <input name="foto" value="${foto}" class="form-control"></input>
+          <input name="foto" value="${foto}" class="form-control" required="required"></input>
     </div>
     <div class="form-group">
         <label for="tipo">Tipo de Refeição</label>
@@ -43,10 +43,11 @@
     <div class="form-group">
     <button type="submit" class="btn btn-primary">Cadastrar</button>
     </div>
+            <div class="form-group">
+            <a href="/restaurantes" class="btn btn-primary">Restaurantes cadastrados</a>
+            </div>
     </form>
     </div>
-        <div class="form-group">
-        <button href class="btn btn-primary">Restaurantes cadastrados</button>
-        </div>
+
 </body>
 </html>

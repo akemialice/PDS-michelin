@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class Restaurante {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +19,10 @@ public class Restaurante {
 
     @Deprecated
     public Restaurante(){
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getNome() {

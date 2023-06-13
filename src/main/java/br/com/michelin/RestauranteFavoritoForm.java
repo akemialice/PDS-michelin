@@ -5,11 +5,6 @@ public class RestauranteFavoritoForm {
     private Long id;
     private boolean ehFavorito;
 
-    public void update(Restaurante restaurante, RestauranteRepository restauranteRepository){
-       restaurante.setEhFavorito(ehFavorito);
-       restauranteRepository.save(restaurante);
-    }
-
     public boolean isEhFavorito() {
         return ehFavorito;
     }

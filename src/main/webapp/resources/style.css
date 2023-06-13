@@ -454,7 +454,18 @@ button {
  }
 
  .title {
- margin: 50px 0 50px 0;
+    margin: 50px 0 50px 0;
  }
+
+ .card-img-top{
+    height: 200px;
+ }
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 /* pergunta 4*/

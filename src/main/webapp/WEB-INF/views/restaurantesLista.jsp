@@ -29,13 +29,13 @@
     <div class="d-flex align-items-center">
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active fw-semibold lang " aria-current="page" href="#" key="tdr">Todos os Restaurantes</a>
+                  <a class="nav-link active fw-semibold lang " aria-current="page" href="/restaurantes" key="tdr">Todos os Restaurantes</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link fw-semibold lang " aria-current="page" href="#" key="paravoce">Para Você</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fw-semibold lang" aria-current="page" href="#" key="favoritos">Favoritos</a>
+                  <a class="nav-link fw-semibold lang" aria-current="page" href="/restaurantesFavoritos" key="favoritos">Favoritos</a>
                 </li>
                 <select id="year">
                   <option value="pt" id="pt">PT</option>
@@ -84,14 +84,26 @@
                                              <p class="card-text">${restaurante.telefone}</p>
                               <a target="_blank" href="${restaurante.site}" class="card-text" >Site ${restaurante.nome}</a>
                               <div class="form-group">
-                              <input type="checkbox" name="ehFavorito" ${favorito.ehFavorito} ? 'checked' : ''/>
-                              <label class="labels">Marcar como favorito?</label>
+                               <c:choose>
+                                <c:when test="${restaurante.ehFavorito eq false}">
+                                    <p id="restaurante_${restaurante.id}">
+                                        <a href="#" onClick="favoritaRestaurante(${restaurante.id})">
+                                            Favoritar
+                                        </a>
+                                    </p>
+                                </c:when>
+                                <c:otherwise>
+                                    <p>
+                                        Restaurante favorito
+                                    </p>
+                                </c:otherwise>
+                               </c:choose>
                                              </div>
                                              </div>
                                              </div>
                                              </c:forEach>
                                              </div>
-                                             <a href="/restaurantes">Editar</a>
+
 
 
         <h1 class="title">Bares e Populares</h1>
@@ -212,4 +224,6 @@
                                              </div>
 </div>
 </body>
+    <script src="resources/js/favoritaEDesfavoritaRestaurante.js"></script>
+    <script src="resources/js/jQuery.js"></script>
 </html>

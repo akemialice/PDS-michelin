@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -38,13 +40,13 @@ public class RestauranteController {
         return "restaurantesLista";
     }
 
+    @ResponseBody
     @Transactional
-    @PostMapping("/restaurantes")
-    public String editFavorito(RestauranteFavoritoForm form){
-        Optional<Restaurante> restaurante = restauranteRepository.findById(form.getId());
-
-        form.update(restaurante.get(), restauranteRepository);
-        return "redirect:/restaurantes";
+    @PostMapping("/favoritarRestaurante")
+    public void editFavorito(Long id, Model model){
+        Restaurante restaurante = restauranteRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        restauranteRepository.setRestauranteFavorito(id);
+        model.addAttribute("restaurante", restaurante);
     }
 
 
